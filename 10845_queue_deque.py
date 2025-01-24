@@ -1,9 +1,12 @@
 # https://www.acmicpc.net/problem/10845
+# deque 모듈을 활용한 queue 구현입니다.
 # Python 3의 경우, input을 받는 과정에서 많은 계산이 소요됩니다.
-# 이를 방지하기 위해, sys 모듈을 통해 sys.stdin.readline을 사용하세요.
-import sys
+# 이를 방지하기 위해, sys 모듈을 통해 sys.stdin.readline을 사용합니다.
 
-queue = []
+import sys
+from collections import deque
+
+queue = deque([])
 
 # queue 삽입
 def push(component: int) -> None:
@@ -17,7 +20,7 @@ def pop() -> None:
         print(-1)
     else:
         print(queue[0])
-        queue = queue[1:]
+        queue.popleft()
 
 # queue 크기
 def size() -> None:
@@ -51,6 +54,7 @@ N = int(input())
 
 for i in range(N):
     order = list(map(str, sys.stdin.readline().split()))
+
     if order[0] == 'push':
         intager = order[1]
         push(intager)

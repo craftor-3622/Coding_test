@@ -1,4 +1,7 @@
 # https://www.acmicpc.net/problem/10845
+# Python 3의 경우, input을 받는 과정에서 많은 계산이 소요됩니다.
+# 이를 방지하기 위해, sys 모듈을 통해 sys.stdin.readline을 사용하세요.
+import sys
 
 queue = []
 
@@ -47,7 +50,7 @@ def back() -> None:
 N = int(input())
 
 for i in range(N):
-    order = input().split(' ')
+    order = list(map(str, sys.stdin.readline().split()))
     if order[0] == 'push':
         intager = order[1]
         push(intager)

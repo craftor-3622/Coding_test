@@ -1,4 +1,5 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeW7FakkUDFAVH&categoryId=AWIeW7FakkUDFAVH&categoryType=CODE&problemTitle=%ED%99%9C%EC%A3%BC%EB%A1%9C&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
+# 소요시간 : 4시간 30분
 
 # 활주로가 건설할 지형의 최대 높이를 출력합니다.
 def cliff_height(line: list) -> int:

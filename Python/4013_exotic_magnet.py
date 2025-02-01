@@ -85,11 +85,6 @@ for count in range(K):
     for num in range(4):
         pass
         
-
-
-    
-
-
 # print(get_score(magnet_plate))
 
 for idx in range(4):

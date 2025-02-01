@@ -32,19 +32,21 @@ def magnet_interaction(left_gear: list, right_gear: list) -> bool:
     else:
         return False
 
-def Force_rotation(pos: int, dir: int, link: list) -> list:
+def Force_rotation(pos_num: int, dir: int, link: list) -> list:
     temp = [0, 0, 0, 0]
-    temp[pos - 1] = dir
-
+    temp[pos_num - 1] = dir
+    
     # 왼쪽 link 확인
-    for left in range(pos - 1, 0, -1):
-        if True:
-            pass
+    left_num = pos_num - 1
+    if (left_num >= 1 and temp[left_num - 1] == 0
+        and link[left_num - 1]):
+        Force_rotation(left_num, -dir, link)
 
     # 오른쪽 link 확인
-    for right in range(pos - 1, 3):
-
-        pass
+    right_num = pos_num + 1
+    if (left_num >= 1 and temp[left_num - 1] == 0
+        and link[left_num - 1]):
+        Force_rotation(right_num, -dir, link)
 
     return temp
 

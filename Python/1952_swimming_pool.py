@@ -3,35 +3,34 @@
 # 0 -> day, 1 -> month, 2 -> quarter, 3 -> year
 
 # 월간 이용료까지 고려한 상황에서 3개월 이용료도 고려합니다.
-# 재귀 함수로 dfs 구현하고, 최소합을 갖는 리스트 출력
+# 재귀 함수로 dfs 구현하고, 최소합을 출력합니다.
 def consider_quarter(old: list, quarter: int, banned: list) -> int:
-    new = old
-    point = False
-    temp = []
-    recursive = list(range(12))
     minimum = sum(old)
 
+    recursive = list(range(12))
     for idx in range(len(banned)):
         if banned[idx] == 1:
             recursive.remove(idx)
 
     for i in recursive:
         temp = old.copy()
+        ban = banned.copy()
+
         temp[i] = quarter
-        for j in range(i + 1, min(i+3, 12)):
+        for j in range(i + 1, min(12, i+3)):
             temp[j] = 0
-        print(temp)
 
+        for idx in range(max(0, i - 2), min(i + 3, 12)):
+            ban[idx] = 1
+        
         if sum(temp) < minimum:
-            point = i
-            for idx in range(max(0, point - 2), min(point + 3, 12)):
-                banned[idx] = 1
-            print(banned)
             minimum = sum(temp)
-            temp = consider_quarter(temp, quarter, banned)
+        
+            new_cost = consider_quarter(temp, quarter, ban)
+            if new_cost < minimum:
+                minimum = new_cost
 
-    print(new)
-    return new
+    return minimum
 
 # 가격표와 이용 계획을 토대로 최소 가격을 반환합니다.
 def minimum_fee(schedule: list, fee_list: list) -> int:
@@ -51,10 +50,10 @@ def minimum_fee(schedule: list, fee_list: list) -> int:
             total_cost_list[idx] = month
 
     # 3개월 이용료를 고려합니다.
-    total_cost_list = consider_quarter(total_cost_list, quarter, quarter_charged)
+    new_cost = consider_quarter(total_cost_list, quarter, quarter_charged)
 
     # 마지막으로, 연간 이용료를 고려합니다.
-    total = min(sum(total_cost_list), year)
+    total = min(new_cost, year)
 
     return total
 

@@ -1,9 +1,10 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpFQaAQMDFAUq&categoryId=AV5PpFQaAQMDFAUq&categoryType=CODE&problemTitle=%EC%88%98%EC%98%81%EC%9E%A5&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
 # fee_list 세부 내용
 # 0 -> day, 1 -> month, 2 -> quarter, 3 -> year
+# 소요시간 : 4시간, Test_case 49/50, 전체적인 재설계 필요
+# DP 어렵다
 
 # 월간 이용료까지 고려한 상황에서 3개월 이용료도 고려합니다.
-# 재귀 함수로 dfs 구현하고, 최소합을 출력합니다.
 def consider_quarter(old: list, quarter: int, banned: list) -> int:
     minimum = sum(old)
 

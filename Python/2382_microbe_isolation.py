@@ -1,6 +1,7 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV597vbqAH0DFAVl&categoryId=AV597vbqAH0DFAVl&categoryType=CODE&problemTitle=%EB%AF%B8%EC%83%9D%EB%AC%BC+%EA%B2%A9%EB%A6%AC&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
-# 소요시간 : 1시간 40분분
+# 소요시간 : 1시간 40분
 
+# microbe의 데이터 index: 0 - i, 1 - j, 2 - 미생물 수, 3 - 방향
 # 군집이 약품 구역에 도달 했을 때 발동합니다.
 def change_direction(microbe_hive: list) -> None:
     # 미생물 숫자 절반으로 감소
@@ -11,6 +12,7 @@ def change_direction(microbe_hive: list) -> None:
     else:                           # 2, 4
         microbe_hive[3] -= 1
 
+# 군집이 둘 이상 뭉친 경우, 우선 임시로 리스트로 처리합니다.
 def complexing_hive(existed: list, new: list) -> None:
     amount = []
     direction = []

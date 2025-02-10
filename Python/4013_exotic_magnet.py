@@ -57,7 +57,7 @@ def get_score(gear_plate: list) -> int:
 
 T = int(input())
 
-for test_case in range(T):
+for test_case in range(1, T + 1):
 
     K = int(input())
 

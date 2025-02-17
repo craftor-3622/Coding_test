@@ -1,3 +1,4 @@
+# https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5-BEE6AK0DFAVl&categoryId=AV5-BEE6AK0DFAVl&categoryType=CODE&problemTitle=2383&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
 # 소요시간 : 1시간 45분
 # 완전 탐색(itertools 활용 못하면 꽤 힘듦) + queue 활용
 

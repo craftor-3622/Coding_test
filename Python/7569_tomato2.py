@@ -1,3 +1,4 @@
+# https://www.acmicpc.net/problem/7569
 # 소요시간 : 40분, bfs 3차원 그래프 문제 (2차원의 확장)
 
 import sys

@@ -1,3 +1,5 @@
+# 소요 시간 : 8시간... (2주에 걸쳐 풀이 끗)
+# BFS(벽돌 파괴) + DFS(완전 탐색) + 스택(벽돌 정리) (backtracking은 선택사항)
 import sys
 from collections import deque
 
@@ -47,13 +49,17 @@ def destroy_blocks(map_info: list, sj: int, length: int, width: int):
 
 # 블럭이 깨진 후 중력이 작용하는 상황을 처리하는 함수입니다.
 def gravity(map_info: list, length: int, width: int):
+    blocks = list()
     for j in range(width):
-        for i in range(length-2, 0, -1):
-            if map_info[i][j] != 0 and map_info[i+1][j] == 0:
-                k = i
-                while k + 1 < length and map_info[k+1][j] == 0:
-                    map_info[k][j], map_info[k+1][j] = map_info[k+1][j], map_info[k][j]
-                    k += 1
+        for i in range(length):
+            if map_info[i][j] != 0:
+                blocks.append(map_info[i][j])
+                map_info[i][j] = 0
+
+        k = length - 1
+        while len(blocks) != 0:
+            map_info[k][j] = blocks.pop()
+            k -= 1
 
 
 # 시행이 모두 종료된 이후 남은 블럭의 개수를 반환합니다.

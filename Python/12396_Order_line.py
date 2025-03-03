@@ -1,4 +1,5 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/12936
+# 순열의 순번을 구하는 문제. DFS에서 Backtracking을 적절하게 줘야 통과가 된다.
 
 def solution(n, k):
     global answer

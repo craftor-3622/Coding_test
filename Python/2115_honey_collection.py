@@ -1,5 +1,5 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5V4A46AdIDFAWu&categoryId=AV5V4A46AdIDFAWu&categoryType=CODE&problemTitle=%EB%B2%8C%EA%BF%80&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
-# 0-1 배낭문제로 푸는 문제, 하지만 선택 가지 수가 적어서 완전 탐색도 가능
+# DFS로 푸는 것이 정석이지만, 범위가 적어 조합도 가능.
 # 소요시간 : 1시간 조금 안됨
 import sys
 

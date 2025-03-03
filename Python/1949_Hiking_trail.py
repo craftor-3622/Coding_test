@@ -1,9 +1,4 @@
 # https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PoOKKAPIDFAUq
-# 공사 영역 확인은 완전 탐색으로 경우의 수 모두 확인하고(N은 작으니까), 경로 길이는 BFS 로 푸는 문제
-# 소요시간: 40분, 테스트 개수 : 50/51
-# 틀린 이유 : 깎기 전의 봉우리를 기준으로 시작점이 결정되어야 한다. (문제 설명이 너무 애매하게 되어 있었다)
-# 최종 소요시간: 1시간
-
 import sys                              # input.txt에서 입력을 받기 위한 패키지
 from pprint import pprint               # 2차원 배열 가독성을 위한 출력 함수
 from collections import deque           # DFS에서 활용할 Queue 모듈
@@ -100,3 +95,9 @@ for test_case in range(1, T + 1):
     result = max(height_nomi)
 
     print(f'#{test_case} {result}')
+
+# 해당 코드는 최장 길이는 DFS로, 공사는 조합으로 구현한 코드입니다.
+# 소요시간: 40분, 테스트 개수 : 50/51
+# 틀린 이유 : 깎기 전의 봉우리를 기준으로 시작점이 결정되어야 한다. (문제 설명이 너무 애매하게 되어 있었다)
+# 최종 소요시간: 1시간
+# 최적의 방법: DFS로 최대 경로 길이를 추정한다. 이 때 공사 추가 조건으로 dfs 밀도를 높여주면 된다.

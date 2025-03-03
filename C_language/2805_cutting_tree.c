@@ -1,6 +1,4 @@
 // https://www.acmicpc.net/problem/2805
-// 정렬 후 이진 탐색 (qsort 함수 만세)
-// 소요 시간 : 30분, long int와 int의 범위는 다르다 (근데 항상 까먹는다)
 
 # define _CRT_SECURE_NO_WARNINGS
 # include <stdio.h>
@@ -53,6 +51,8 @@ int main() {
     return 0;
 }
 
+// 정렬 후 이진 탐색
+// 소요 시간 : 30분, long int와 int의 범위는 다르다.
 /* 여담 :
 매개변수 탐색은 이진 탐색과 동일한 알고리즘 구조를 가지고 있지만,
 한 가지 다른 특징은 배열이 꼭 정렬되어 있지 않아도 된다.

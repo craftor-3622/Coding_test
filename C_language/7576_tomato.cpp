@@ -1,5 +1,4 @@
-// 간단한 BFS 문제. 하지만 C++로 구현할 수 있는가?
-// 정답은 구현 성공! 소요시간 1시간 20분
+// https://www.acmicpc.net/problem/7576
 #include <iostream>
 #include <queue>
 
@@ -131,3 +130,5 @@ int main()
 
 	return 0;
 }
+
+// 간단한 BFS 문제

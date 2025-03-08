@@ -1,5 +1,5 @@
 // https://swexpertacademy.com/main/code/userProblem/userProblemDetail.do?contestProbId=AYFofW8qpXYDFAR4
-// DP 문제. 나머지 처리를 어떻게 하는 것이 좋을까?
+// DP 문제. 나머지 처리를 어떻게 하는 것이 좋을까? 
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>

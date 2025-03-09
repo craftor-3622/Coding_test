@@ -1,5 +1,6 @@
 // https://swexpertacademy.com/main/code/userProblem/userProblemDetail.do?contestProbId=AYFofW8qpXYDFAR4
-// DP 문제. 나머지 처리를 어떻게 하는 것이 좋을까? 
+// 나머지 계산 + Greedy와 합쳐 환상의 콜라보레이션을 일으킨 문제
+// 문제 난이도가 왜 D2인가 싶으면서 알면 D2가 맞다 싶은 문제
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -7,59 +8,46 @@
 
 using namespace std;
 
-int main()
-{
+int main(int argc, char* argv[]) {
 	freopen("input.txt", "r", stdin);
-	
+
 	int T;
 	cin >> T;
 
-	for (int test_case = 1; test_case <= T; ++test_case)
-	{
+	for (int tc = 1; tc <= T; tc++) {
 		int N;
+		int max_height = 0;
 		cin >> N;
 
-		int max_h = 0;
-		int max_i;
 		vector<int> trees(N, 0);
-		// 홀수 나머지가 많은 경우 예외를 처리하기 위한 연산
-		vector<vector<int>> ration;
-		int odd = 0; int even = 0;
+		// odd는 홀수 날 개수, even은 짝수 날 개수, days는 소요 날 수
+		int odd = 0;
+		int even = 0;
 		int days = 0;
-	
-		// 입력과 동시에 최대 값 및 index 연산
+
 		for (int i = 0; i < N; i++) {
 			cin >> trees[i];
-			if (max_h < trees[i]) max_h = trees[i]; max_i = i;
+			if (max_height < trees[i]) max_height = trees[i];
 		}
-		
-		// 몫, 나머지로 나누기
+
 		for (int i = 0; i < N; i++) {
-			int quo = (max_h - trees[i]) / 3;
-			int mod = (max_h - trees[i]) % 3;
-
-			days += quo * 2;
-			if (quo != 0) ration.push_back({ i,quo,mod });
-			if (mod == 1) odd++;
-			if (mod == 2) even++;
-		}
-		
-		int diff = abs(odd - even);
-
-		if (odd == even) days += odd * 2;
-		if (even > odd) {
-			days += odd * 2 + 4 * (int)(diff / 3);
-			if (diff % 3 != 0) days += diff % 3 + 1;
-		}
-		if (odd > even) {
-			for (int n = 0; n < size(ration) && diff > 1; n++) {
-				
-
-			}
+			trees[i] = max_height - trees[i];
+			even += trees[i] / 2;
+			odd += trees[i] % 2;
 		}
 
-		cout << "#" << test_case << " " << days << endl;
+		if (odd > even) days = even * 2 + (odd - even) * 2 - 1;
+		else if (even > odd) {
+			days = odd * 2;
+			days += (even - odd) / 3 * 4;
+			if ((even - odd) % 3 != 0) days += (even - odd) % 3 + 1;
+		}
+		else days = odd * 2;
+
+		cout << "#" << tc << " " << days << endl;
 	}
+
 	return 0;
 }
 
+// 한줄 평 : 코드 자체가 자료 구조를 요구하는 것도 아니어서 어이없었던 문제.

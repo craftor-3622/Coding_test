@@ -31,7 +31,7 @@ def maximum_score():
 
 # 임의의 지점 및 방향으로 시작했을 때 얻을 수 있는 점수
 # 주의 : pos: tuple[int, int]은 3.7 버전에서 지원하지 않습니다.
-# 런타임 에러 발생 시 tuple[int, int] 을 지우고 사용해 주세요.
+# 런타임 에러 발생 시 이 부분을 지우고 사용해 주세요.
 def get_score(pos: tuple[int, int], dir_s: int):
     p, d = list(pos), dir_s
     score = 0

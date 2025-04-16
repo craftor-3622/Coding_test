@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/2042
 // Segment Tree Tutorial
 // 기본 구조는 Complete BT 기반, leaf node는 array 요소 값, 나머지 node는 구간 합
 // 구간 합 등 구간 query에 활용 -> O(N)에서 O(log N)으로 높은 성능을 가진다.

@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/12851
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -83,4 +84,7 @@ out-of-bounds 에러가 발생한다.
 2. 가중치가 여부
 3. 최단 거리/경로 수를 묻는가? (BFS/다익스트라와 연결)
 4. 시간/단계 축 관련 제약 조건 확인
+
+만약 그래프 문제라면, 이런 순서대로 접근해서 풀어보자...
+그리디 → BFS/그래프 → 다익스트라/0-1 BFS → DP
 */
